@@ -1,0 +1,245 @@
+<html>
+
+<head>
+
+	<title msg="options_title"></title>
+	
+	<script type="text/javascript" src="js/background/namespace.js"></script>
+
+	<script type="text/javascript" src="/js/Prefs.js"></script>				
+	<script type="text/javascript" src="/js/Utils.js"></script>			
+	<script type="text/javascript" src="/js/locale.js"></script>
+	<script type="text/javascript" src="/js/ad.js"></script>	
+	
+	<!--meta http-equiv="Content-Type" content="text/html; charset=utf-8"-->
+
+	<script type="text/javascript" src="/js/options/roller.js"  charset="utf-8"></script>	
+	<script type="text/javascript" src="/js/options/options.js"></script>	
+	<script type="text/javascript" src="js/options.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/options.css" />
+	
+</head>
+
+
+
+<body>
+	
+	<div id="mainContainer">
+	
+		<div id="mainMenu">
+		
+			<div id="buttonBigGeneral" class="buttonBig general" active="1"></div>
+			<div id="buttonBigService" class="buttonBig service"></div>
+			<div id="buttonBigWebsites" class="buttonBig websites"></div>
+			<div id="buttonBigAbout" class="buttonBig about"></div>
+			
+		</div>		
+				
+		<div id="settingsContent">
+			
+			<div id="rollerContent">
+			
+				<div class="settingsPage" id="generalSettings">	
+					
+					<div class="pageTitle"><span msg="options_general_options"></span></div>
+
+					<fieldset  class="subSet">
+						<legend msg="options_display_position_icon_title"></legend>
+						
+						<table>
+							<tbody>
+								<tr>
+									<td width="120"><span msg="options_display_icon_x_title"></span></td>	
+									<td width="200"><input type="number" min="0" max="50" sname="sp.display_icon_x"/></td>	
+									<td width="300">
+										<span msg="options_display_icon_label"></span>
+										<select sname="sp.display_icon_pos" id="mode_Live">
+											<option value="after" 	msg="options_display_icon_after_title"></option>
+											<option value="near" 	msg="options_display_icon_near_title"></option>											
+										</select>
+									</td>	
+								</tr>
+								<tr>
+									<td><span msg="options_display_icon_y_title"></span></td>	
+									<td><input type="number" min="0" max="50" sname="sp.display_icon_y"/></td>	
+								</tr>
+							</tbody>
+						</table>
+						
+					</fieldset>
+					
+					<fieldset  class="subSet">
+						<legend msg="options_display_speed_icon_title"></legend>
+						
+						<table>
+							<tbody>
+								<tr>
+									<td width="120"><span msg="options_display_show_icon_title"></span></td>	
+									<td width="200"><input type="range" sname="sp.scale_show_icon" min="100" max="2000" id="scaleShowIcon"></td>	
+									<td width="100"><span id="custom_scaleShowIcon"> </span></td>	
+								<tr>
+									<td><span msg="options_display_hide_icon_title"></span></td>	
+									<td><input type="range" sname="sp.scale_hide_icon" min="500" max="3000" id="scaleHideIcon"></td>	
+									<td><span id="custom_scaleHideIcon"> </span></td>	
+								</tr>
+								<tr>
+									<td><span msg="options_display_close_window_title"></span></td>	
+									<td><input type="range" sname="sp.scale_close_window" min="500" max="3000" id="scaleClosePreview"></td>	
+									<td><span id="custom_scaleClosePreview"> </span></td>	
+								</tr>
+								<tr>
+									<td> </td>	
+									<td>
+										<table>
+											<tbody>
+												<tr>
+													<td width="50"><span msg="options_display_speed_fast_title"></td>	
+													<td width="50"> </td>
+													<td width="50"><span msg="options_display_speed_slow_title"></td>	
+												</tr>
+											</tbody>
+										</table>
+									</td>	
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+
+					<fieldset  class="subSet">
+						<legend msg="options_display_query_title"></legend>
+						
+						<table>
+							<tbody>
+								<tr>
+									<td width="120"><span msg="options_display_daily_history_title"></span></td>	
+									<td width="200"><input type="range" sname="sp.scale_daily_history" min="1" max="30" id="scaleDailyHistory"></td>	
+									<td><span id="custom_scaleDailyHistory"> </span></td>	
+								</tr>
+								<tr>
+									<td> </td>	
+									<td>
+										<table>
+											<tbody>
+												<tr>
+													<td width="50"><span msg="options_display_daily_history_home_title"></td>	
+													<td width="30"> </td>
+													<td width="50"><span msg="options_display_daily_history_end_title"></td>	
+												</tr>
+											</tbody>
+										</table>
+									</td>	
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+					
+					<fieldset  class="subSet">
+						<label><input type="checkbox" sname="sp.enable_safe"      id="enable_Safe"      /><span msg="options_enable_is_safe_title"></span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_live"   	  id="enable_Live"      /><span msg="options_enable_instant_live_title"></span></label>
+						
+								<span style="width:100px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							
+								<select sname="sp.live_mode" id="mode_Live">
+									<option value="small" 	msg="options_mode_live_small_title"></option>
+									<option value="medium" 	msg="options_mode_live_middle_title"></option>											
+									<option value="big" 	msg="options_mode_live_big_title"></option>											
+								</select>
+						
+						<br/>
+						<label><input type="checkbox" sname="sp.show_icons"       id="enable_ShowIcons" /><span msg="options_show_icons_near_title"></span></label>
+					</fieldset>
+					
+	
+				</div>
+				<div class="settingsPage" id="serviceSettings">
+					
+					<div class="pageTitle" msg="options_service_options"></div>
+
+					<fieldset class="subSet">
+						<legend msg="options_display_service_title"></legend>
+										
+						<label><input type="checkbox" sname="sp.enable_google"   id="enableGoogle"/><span>Google Advisory</span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_mcafee"   id="enableMcAfee"/><span>McAfee</span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_norton"   id="enableNorton"/><span>Norton</span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_wot"      id="enableWOT"   /><span>WOT</span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_avast"    id="enableAvast" /><span>Avast Online</span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_trust"    id="enableTrust" /><span>Trustwave SecureBrowsing</span></label><br/>
+						<label><input type="checkbox" sname="sp.enable_drweb"    id="enableDrWeb" /><span>DrWeb</span></label>
+					</fieldset>
+
+					
+				</div>
+				<div class="settingsPage" id="websitesSettings">
+					
+					<div class="pageTitle" msg="options_websites_options"></div>
+
+					<fieldset class="subWeb">
+						<legend msg="options_websites_options"></legend>
+					
+					<span class="littleGray" msg="options_display_description_goodsite_title"></span><br>
+
+					<select size="12" id="GoodSiteList"></select>					
+					
+					<div align="left">
+						<button id="addGoodSite"    class="fvdButton" msg="options_display_description_goodsite_add_title"></button>
+						<button id="removeGoodSite" class="fvdButton" msg="options_display_description_goodsite_remove_title"></button>
+					</div>
+					
+					<label>
+						<span>Domain</span>
+						<input type="text" id="DomainGoodsite"/>
+						<button id="editGoodSite" class="fvdButton" msg="options_display_description_goodsite_edit_title"></button>
+					</label><br/>
+
+					<label><input type="checkbox" id="subDomainGoodsite" /><span msg="options_display_description_goodsite_sub_title"></span></label><br/>
+					
+					</fieldset>
+					
+				</div>
+				<div class="settingsPage" id="aboutSettings">
+
+					<div class="pageTitle" msg="options_about_options"></div>
+				
+					<div class="SafeName">
+						<span>SafePreview</span>
+					</div><br/>
+
+					<div class="SafeInfoAbout">
+						<label>
+							<span>Bugs and Suggestions:</span>
+							<a  href="mailto:fvdmedia@gmail.com"><span>fvdmedia@gmail.com</span></a><br/><br/>
+							<span class="littleGray" >(note: For bugs, please,<br/> include product name (SafePreview) / Browser Version / OS Version)</span>
+						</label><br/><br/>
+						<label>
+							<span>website:</span>
+							<a  href="http://everhelper.me"><span>everhelper.me</span></a><br/>
+						</label><br/><br/>
+						<label>
+							<span>version:</span>
+							<span id="sp_version_value"></span>
+						</label>
+						
+						
+					</div>
+					
+				</div>
+					
+			</div>
+			
+		</div>	
+		
+		<div id="applyButton">
+			<button class="fvdButton main withLoading" loading="0" id="applyChangesButton"><span class="text" msg="options_apply_changes"></span><div class="image"></div></button>
+		</div>
+		
+		<div id="closeButton">
+			<button class="fvdButton" id="buttonCloseButton"><span class="text" msg="options_close"></span></button>
+		</div>
+			
+	</div>
+	
+	
+</body>
+
+</html>

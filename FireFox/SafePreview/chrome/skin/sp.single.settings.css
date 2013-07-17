@@ -1,0 +1,75 @@
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+prefwindow#fvdsd_settings_dialog
+{
+	min-width: 300px;
+	min-height: 550px;
+}
+
+.paneButtonIcon  
+{
+  width: 48px;
+  height: 48px;
+}
+
+radio[pane="fvdsd_general"]
+{
+	list-style-image: url('sp.single.settings_general.png');
+}
+
+radio[pane="fvdsd_about"]
+{
+	list-style-image: url('sp.single.settings_about.png');
+}
+radio[pane="fvdsd_service"]
+{
+	list-style-image: url('sp.single.settings_service.png');
+}
+
+radio[pane="fvdsd_goodsite"] 
+{
+	list-style-image: url('sp.single.settings_websites.png');
+}
+
+label#fvdsd_about_title
+{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+description.feature-descr {
+	font-style: italic;
+	padding: 0px 0px 0px 5px;
+}
+
+listbox#GoodSiteList
+{
+	text-align: left;
+}
+
+
+
+
+
+label#fvdsd_hokey_ctrl
+{
+	font-weight: bold;
+}
+
+image#fvdsd_folder_icon
+{
+	margin-right: 4px;
+}
+
+label.text_label
+{
+	color: gray;
+}
+description.text_descr
+{
+	color: gray;
+	width: 250px;
+	word-wrap: break-word;
+}
+

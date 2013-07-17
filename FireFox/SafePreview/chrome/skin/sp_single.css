@@ -1,0 +1,25 @@
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+statusbarpanel#sp_single_status_bar
+{
+	cursor: pointer;
+	list-style-image: url('chrome://sp.single/skin/sp.single.main_button.small.png');
+}
+
+menuitem#safe_preview_context_search
+{
+	list-style-image: url('chrome://sp.single/skin/sp.single.main_button.small.png');
+}
+
+
+.sp_binding
+{
+    -moz-binding: url("chrome://sp.single/content/bindings/sp_single.xml#spFrame");
+    z-index:10000;
+	background-color:white;
+	position:fixed;
+	border: 2px solid #acc3ec;
+	-moz-border-radius: 3px 3px 3px 3px;
+}

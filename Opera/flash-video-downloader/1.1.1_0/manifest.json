@@ -1,0 +1,31 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "images/fvd.single.icon.png",
+      "default_popup": "popup.html",
+      "default_title": "__MSG_extension_hint__"
+   },
+   "content_scripts": [ {
+      "css": 	[ "js/hooks/content.css" ],
+      "js": 	[ "js/hooks/content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "Youtube Downloader. Flash Video Downloader helps you to download any video (flv, mp4, HD) from YouTube-like, Facebook, Break, Metacafe and more in one click. You can download mp3, music (iPod), avi and more. Download Flash games. Download Helper.",
+   "icons": {
+      "128": "images/fvd.single.main_128.png",
+      "16": "images/fvd.single.main_16.png",
+      "24": "images/fvd.single.main_24.png",
+      "32": "images/fvd.single.main_32.png",
+      "48": "images/fvd.single.main_48.png",
+      "64": "images/fvd.single.main_64.png"
+   },
+   "manifest_version": 2,
+   "name": "Flash Video Downloader - Youtube Downloader",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "webRequest", "http://*/*", "https://*/*" ],
+   "version": "1.1.1"
+}

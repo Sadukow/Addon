@@ -1,0 +1,26 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "content_scripts": [ {
+      "css": 	[ "js/hooks/content.css" ],
+      "js": 	[ "js/hooks/content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "Safe Preview",
+   "icons": {
+      "128": "images/sp.single.main_128.png",
+      "16":  "images/sp.single.main_16.png",
+      "24":  "images/sp.single.main_24.png",
+      "32":  "images/sp.single.main_32.png",
+      "48":  "images/sp.single.main_48.png",
+      "64":  "images/sp.single.main_64.png"
+   },
+   "manifest_version": 2,
+   "name": "Safe Preview",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "contextMenus", "webRequest", "http://*/*", "https://*/*" ],
+   "version": "1.0.0"
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://sp.single/skin/sp_single.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % sp.singleDTD SYSTEM "chrome://sp.single/locale/sp.single.dtd">
+%sp.singleDTD;
+]>
+
+
+
+<overlay id="price-single-Overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_link.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_google.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_mcafee.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_norton.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_wot.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_avast.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_trust.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe_drweb.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_safe.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_preview.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_webcache.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_live.js" />	
+
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_single.js" />
+	<script type="application/x-javascript" src="chrome://sp.single/content/include/script.js" />	
+	<script type="application/x-javascript" src="chrome://sp.single/content/include/ext_api.js" />	
+
+	<window id="main-window">
+	
+		<browser type="content" disablehistory="true" flex="1" id="safepreview_imageFrame" hidden="true"/>
+
+		<vbox class="sp_binding" skin="default" id="safepreview_preview_overlay" hidden="true" />
+		
+		
+	</window>
+
+	
+	<popupset id="mainPopupSet">
+		
+		<menupopup hidden="true" id="safe_preview_fvdssdContentMenu"> 
+			<menu id="safe_preview___context_search"	
+						label="SafePreview" 	
+						class="menu-iconic"   
+						image="chrome://sp.single/skin/sp.single.main_button.small.png">
+						
+				<menupopup onpopupshowing="sp_single.previewContextMenuPopup( event)"> 
+					<menuitem id="safe_preview___context_safe" 
+							label="Is it safe?" 
+							class="menuitem-iconic" 
+							image="chrome://sp.single/skin/sp.single_smal_icon_active.png"
+							oncommand="sp_single.start_it_safe(event)" />	
+
+					<menuitem id="safe_preview___context_preview" 
+							label="Instant Preview" 
+							class="menuitem-iconic" 
+							image="chrome://sp.single/skin/sp.single_smal_preview_icon_active.png"
+							oncommand="sp_single.start_preview(event)" />	
+				
+					<menuitem id="safe_preview___context_regular" 
+							label="Regular Live View" 
+							class="menuitem-iconic" 
+							image="chrome://sp.single/skin/sp.single_smal_regular_icon_active.png"
+							oncommand="sp_single.start_regular(event)" />	
+				
+					<menuitem id="safe_preview___context_incognito" 
+							label="Private Live View" 
+							class="menuitem-iconic" 
+							image="chrome://sp.single/skin/sp.single_smal_incognito_icon_active.png"
+							oncommand="sp_single.start_incognito(event)" />	
+				
+					<menuitem id="safe_preview___context_setting" 
+							label="Settings" 
+							class="menuitem-iconic" 
+							image="chrome://sp.single/skin/setting.png"
+							oncommand="sp_single.display_settings(event)" />	
+				
+				</menupopup>
+							
+			</menu>
+			
+		</menupopup>
+		
+	</popupset>
+	
+	<!--popup id="contentAreaContextMenu">
+	<popupset id="mainPopupSet">
+		
+		<menupopup hidden="true" id="safe_preview_fvdssdContentMenu">  
+			<menuitem id="safe_preview___context_search" label="Is it safe?" class="menuitem-iconic" oncommand="sp_single.start_it_safe(event)" />	
+		</menupopup>
+		
+		
+	</popupset>
+	
+    	<menu id="SafePreview_mainPopupSet"	
+				label="SafePreview" 	
+				insertbefore="context-sep-selectall,context-sep-stop,context-sep-copylink"
+      		class="menu-iconic"   		image="chrome://dwhelper/skin/dwhelper16-on.gif">
+			<menupopup id="dwhelper-ctxmenupopup" class="SystemMenu"/>
+		</menu>
+		<menuitem id="dwhelper-ytlinks" label="menu.ytlinks" class="ContextMenuitem" 	context-item-handler="@downloadhelper.net/youtube-links-context-item;1"/>
+	</popup-->
+	
+	
+	<statusbar id="status-bar">
+		<statusbarpanel oncommand="sp_single.status_button_click(event)"  class="statusbarpanel-iconic" id="sp_single_status_bar" hidden="true"></statusbarpanel>
+	</statusbar>
+	
+	
+	
+</overlay>

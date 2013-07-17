@@ -1,0 +1,55 @@
+<!ENTITY txt.dialog.title		"Настройки">
+<!ENTITY txt.group.interface.title		"Настройки интерфейса:">
+
+<!ENTITY txt.dialog.button_ok.title	"OK">
+<!ENTITY txt.dialog.button_cancel.title	"Отмена">
+
+<!ENTITY txt.prefpane.about.title	"О программе...">
+<!ENTITY txt.prefpane.about.version.title		"Версия:">
+<!ENTITY txt.prefpane.about.home_site_visit.title	"Посетить:">
+<!ENTITY txt.prefpane.about.contact_us.title	"Email: ">
+
+<!ENTITY txt.prefpane.general.title	"Настройки">
+
+<!ENTITY txt.display.position_icon.title		"Позиция иконки">
+<!ENTITY txt.display.icon_x.title		"Смещение по горизонтали">
+<!ENTITY txt.display.icon_y.title		"Смещение по вертикали">
+<!ENTITY pixels.label					"px">
+<!ENTITY sek.label						"сек">
+<!ENTITY day.label						"дней">
+
+<!ENTITY txt.display.icon.label		"от: ">
+<!ENTITY txt.display.icon.after.title	"элемента">
+<!ENTITY txt.display.icon.near.title	"курсора">
+
+<!ENTITY txt.display.speed_icon.title		"Интервалы времени">
+
+<!ENTITY txt.display.show_icon.title		"Показать иконку">
+<!ENTITY txt.display.hide_icon.title		"Скрыть иконку">
+<!ENTITY txt.display.close_window.title		"Закрыть окно">
+
+<!ENTITY txt.display.query.title				"Запросы к сервисам">
+<!ENTITY txt.display.daily_history.title		"Хранить историю">
+<!ENTITY txt.display.daily_history_0.title		"1 день">
+<!ENTITY txt.display.daily_history_1.title		"30 дней">
+
+<!ENTITY txt.display.shows.title				"Отображать">
+<!ENTITY txt.display.is_safe.title				"Enable 'Is it Safe'">
+<!ENTITY txt.display.is_preview.title			"Enable 'Instant' Preview">
+<!ENTITY txt.display.is_live.title				"Enable 'Live' Preview">
+<!ENTITY txt.display.is_show_icons.title		"Show 'Icons' near cursor">
+
+
+
+<!ENTITY txt.prefpane.service.title		"Сервисы">
+<!ENTITY txt.prefpane.goodsite.title	"Доверенные сайты">
+
+<!ENTITY txt.prefpane.description.goodsite.title	"Исключить проверку указанных сайтов">
+<!ENTITY txt.prefpane.description.goodsite_remove.title	 "Удалить">
+<!ENTITY txt.prefpane.description.goodsite_add.title	 "Добавить">
+<!ENTITY txt.prefpane.description.goodsite_edit.title	 "Изменить">
+<!ENTITY txt.prefpane.description.goodsite_sub.title	 "Включить субдомены">
+
+
+<!ENTITY txt.show_hints.title	"Не показывать подсказки">
+

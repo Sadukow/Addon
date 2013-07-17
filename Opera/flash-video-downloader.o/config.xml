@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns="http://www.w3.org/ns/widgets" id="https://addons.opera.com/addons/extensions/details/flash-video-downloader/" version="1.9" href="https://addons.opera.com/extensions/details/flash-video-downloader/">
+  <name short="FVD">Flash Video Downloader</name>
+  <icon height="128" width="128" src="images/fvd.single.main_128.png"/>
+  <icon height="64" width="64" src="images/fvd.single.main_64.png"/>
+  <icon height="32" width="32" src="images/fvd.single.main_32.png"/>
+  <icon height="16" width="16" src="images/fvd.single.main_16.png"/>
+  <access origin="http://www.flashvideodownloader.org/" subdomains="true"/>
+  <access origin="http://suggestqueries.google.com/" subdomains="true"/>
+  <access origin="http://youtube.com/" subdomains="true"/>
+  <access origin="http://vimeo.com/" subdomains="true"/>
+  <author href="http://paulov.com/" email="roma@paulov.com">ArturDubovoy</author>
+  <update-description href="https://extension-updates.opera.com/api/w3c-wd1/update/e7cde330-ac5e-4293-9b19-afa55a1735a9/"/>
+  <license>Copyright 2012 ArturDubovoy. All rights reserved.</license>
+  <description xml:lang="en">Downloads videos from online video services.</description>
+</widget>

@@ -1,0 +1,136 @@
+{
+   "options_general_options": {
+      "message": "General"
+   },
+   "options_service_options": {
+      "message": "Service"
+   },
+   "options_websites_options": {
+      "message": "Websites"
+   },
+   "options_about_options": {
+      "message": "About"
+   },
+   
+   "options_display_position_icon_title": {
+      "message": "Icon appears away:"
+   },
+   "options_display_icon_x_title": {
+      "message": "Horizontal shift:"
+   },
+   "options_display_icon_y_title": {
+      "message": "Vertical shift:"
+   },
+   "options_pixels_label": {
+      "message": "px"
+   },
+   "options_display_icon_label": {
+      "message": "Display Icons:"
+   },
+   "options_display_icon_after_title": {
+      "message": "After Link"
+   },
+   "options_display_icon_near_title": {
+      "message": "Near Cursor"
+   },
+
+   "options_display_speed_icon_title": {
+      "message": "Time Delay:"
+   },
+   "options_display_show_icon_title": {
+      "message": "Show icon speed:"
+   },
+   "options_display_hide_icon_title": {
+      "message": "Hide icon speed:"
+   },
+   "options_display_close_window_title": {
+      "message": "Close Window speed:"
+   },
+   "options_display_speed_slow_title": {
+      "message": "Slow"
+   },
+   "options_display_speed_fast_title": {
+      "message": "Fast"
+   },
+   
+   "options_enable_is_safe_title": {
+      "message": "Enable \"Is it Safe\""
+   },
+   
+   "options_enable_instant_preview_title": {
+      "message": "Enable \"Instant\" Preview"
+   },
+   
+   "options_enable_instant_live_title": {
+      "message": "Enable \"Live\" Preview"
+   },
+   
+   "options_show_icons_near_title": {
+      "message": "Show \"Icons\" near cursor"
+   },
+   
+   "options_mode_live_small_title": {
+      "message": "Small"
+   },
+   
+   "options_mode_live_middle_title": {
+      "message": "Middle"
+   },
+   
+   "options_mode_live_big_title": {
+      "message": "Big"
+   },
+   
+   
+
+   "options_display_query_title": {
+      "message": "Trusted Services Cache:"
+   },
+   "options_display_daily_history_title": {
+      "message": "Keep cache requests:"
+   },
+   "options_display_daily_history_home_title": {
+      "message": "1 day"
+   },
+   "options_display_daily_history_end_title": {
+      "message": "30 days"
+   },
+
+   "options_display_service_title": {
+      "message": "Trusted Services"
+   },
+
+   "options_display_description_goodsite_title": {
+      "message": "Do not check these websites"
+   },
+   "options_display_description_goodsite_remove_title": {
+      "message": "Delete"
+   },
+   "options_display_description_goodsite_add_title": {
+      "message": "Add"
+   },
+   "options_display_description_goodsite_edit_title": {
+      "message": "Edit"
+   },
+   "options_display_description_goodsite_sub_title": {
+      "message": "Include sub-domains"
+   },
+   "options_title": {
+      "message": "SafePreview Options"
+   },
+   "options_apply_changes": {
+      "message": "Apply Changes"
+   },
+   "options_close": {
+      "message": "Close"
+   },
+   "options_poweroff_tab_main_title": {
+      "message": "Main"
+   },
+   "options_tile": {
+      "message": "Tile"
+   },
+   "popup_options": {
+      "message": "Options"
+   }
+}

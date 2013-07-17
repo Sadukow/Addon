@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://sp.single/skin/sp.single.settings.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://sp.single/locale/sp.single.settings.dtd">
+
+<prefwindow id="fvdsd_settings_dialog"
+	title="&txt.dialog.title;"
+	buttons="accept,cancel"
+	buttonlabelaccept="&txt.dialog.button_ok.title;"
+	buttonlabelcancel="&txt.dialog.button_cancel.title;"
+	ondialogaccept="return fvds.ok(event);"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://sp.single/content/sp_settings.js" />
+
+	<prefpane id="fvdsd_general" label="&txt.prefpane.general.title;">
+	        <preferences>
+				<preference id="pref-icon-x" 			name="extensions.SafePreview.single.display_icon_x" type="int" />
+				<preference id="pref-icon-y" 			name="extensions.SafePreview.single.display_icon_y" type="int" />
+				<preference id="fvdsd_service_wot"     	name="extensions.SafePreview.service_wot"  type="bool"  />
+				<preference id="fvdsd_service_mcafee"  	name="extensions.SafePreview.service_mcafee"  type="bool"  />
+				<preference id="fvdsd_service_norton"  	name="extensions.SafePreview.service_norton"  type="bool"  />
+				<preference id="fvdsd_service_google"  	name="extensions.SafePreview.service_google"  type="bool"  />
+				<preference id="fvdsd_service_avast"   	name="extensions.SafePreview.service_avast"  type="bool"  />
+				<preference id="fvdsd_service_trust"   	name="extensions.SafePreview.service_trust"  type="bool"  />
+				<preference id="fvdsd_service_drweb"   	name="extensions.SafePreview.service_drweb"  type="bool"  />
+
+				<preference id="fvdsd_enable_safe"  	name="extensions.SafePreview.enable_safe"  type="bool"  />
+				<preference id="fvdsd_enable_preview"  	name="extensions.SafePreview.enable_preview"  type="bool"  />
+				<preference id="fvdsd_enable_live"  	name="extensions.SafePreview.enable_live"  type="bool"  />
+				<preference id="fvdsd_show_icons"  		name="extensions.SafePreview.show_icons"  type="bool"  />
+
+				<preference id="fvdsd_mode_live" 		name="extensions.SafePreview.mode_live" type="string" />
+				<preference id="fvdsd_mode_display"		name="extensions.SafePreview.mode_display" type="string" />
+
+				
+	        </preferences>
+
+		<groupbox>
+		
+			<caption label="&txt.group.interface.title;" />
+			
+			<hbox>
+				<label value="&txt.display.position_icon.title;" style="font-weight:bold;" />
+			</hbox>
+			<spacer height="5px"/>
+			<grid>
+				<columns>
+					<column/>
+					<column/>
+					<column flex="1"/>
+				</columns>
+				<rows>
+					<row align="center">
+						<label value="&txt.display.icon_x.title;:" control="display_icon_x"/>
+						<textbox id="display_icon_x" size="3" preference="pref-icon-x"/>
+						<label value="&pixels.label;"/>
+						<label value="&txt.display.icon.label;"/>
+						<menulist preference="fvdsd_mode_display" style="width:80px;">
+							<menupopup>
+								<menuitem value="after" 	label="&txt.display.icon.after.title;"/>
+								<menuitem value="near" 		label="&txt.display.icon.near.title;"/>
+							</menupopup>
+						</menulist>
+					</row>
+					<row align="center">
+						<label value="&txt.display.icon_y.title;:" control="display_icon_y"/>
+						<textbox id="display_icon_y" size="3" preference="pref-icon-y"/>
+						<label value="&pixels.label;"/>
+					</row>
+					<row align="center">
+						<spacer height="10px"/>
+					</row>
+				</rows>
+			</grid>
+			<hbox>
+				<label value="&txt.display.speed_icon.title;" style="font-weight:bold;" />
+			</hbox>
+			<spacer height="5px"/>
+			<vbox>
+				<grid>
+					<columns>
+						<column width="120px"/>
+						<column width="150px"/>
+						<column width="30px"/>
+						<column flex="1"/>
+					</columns>
+					<rows>
+						<row>
+							<label class="optionsLabel" value="&txt.display.show_icon.title;:"/>
+							<scale id="scaleShowIcon" min="0" max="10" increment="1" pageincrement="1" onchange="fvds.change_scale_time(event)" />
+							<label id="nShowIcon"/>
+							<label value="&sek.label;" />
+						</row>
+						<row>
+							<label class="optionsLabel" value="&txt.display.hide_icon.title;:"/>
+							<scale id="scaleHideIcon" min="0" max="10" increment="1" pageincrement="1" onchange="fvds.change_scale_time(event)" />
+							<label id="nHideIcon" />
+							<label value="&sek.label;" />
+						</row>
+						<row>
+							<label class="optionsLabel" value="&txt.display.close_window.title;:"/>
+							<scale id="scaleClosePreview" min="0" max="10" increment="1" pageincrement="1" onchange="fvds.change_scale_time(event)" />
+							<label id="nClosePreview" />
+							<label value="&sek.label;" />
+						</row>
+						<row>
+							<label class="optionsLabel" value=""/>
+							<hbox>
+								<label class="optionsLabel" value="Slow"/>
+								<spacer flex="1"/>
+								<label class="optionsLabel" value="Fast"/>
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</vbox>
+			<spacer height="10px"/>
+			<hbox>
+				<label value="&txt.display.query.title;" style="font-weight:bold;" />
+			</hbox>
+			<spacer height="5px"/>
+			<vbox>
+				<grid>
+					<columns>
+						<column width="120px"/>
+						<column width="150px"/>
+						<column flex="1"/>
+					</columns>
+					<rows>
+						<row>
+							<label class="optionsLabel" value="&txt.display.daily_history.title;:"/>
+							<scale id="scaleDailyHistory" min="1" max="30" increment="1" pageincrement="1" onchange="fvds.change_scale_history(event)" />
+							<label  id="nDailyHistory" />
+						</row>
+						<row>
+							<label class="optionsLabel" value=""/>
+							<hbox>
+								<label class="optionsLabel" value="&txt.display.daily_history_0.title;"/>
+								<spacer flex="1"/>
+								<label class="optionsLabel" value="&txt.display.daily_history_1.title;"/>
+							</hbox>
+						</row>
+					</rows>
+				</grid>
+			</vbox>
+			<spacer height="5px"/>
+			<hbox>
+				<label value="&txt.display.shows.title;" style="font-weight:bold;" />
+			</hbox>
+			<spacer height="5px"/>
+			<vbox>
+				<hbox><checkbox label="&txt.display.is_safe.title;"    		id="fvdsd_is_safe"  	  preference="fvdsd_enable_safe"   /><spacer flex="1" /></hbox>
+				<hbox>
+					<checkbox label="&txt.display.is_live.title;"      	id="fvdsd_is_live"     	  preference="fvdsd_enable_live"       /><spacer flex="1" />
+					
+					<menulist preference="fvdsd_mode_live" style="width:100px;">
+						<menupopup>
+							<menuitem value="small" 	label="small"/>
+							<menuitem value="medium" 	label="medium"/>
+							<menuitem value="big"		label="big"/>
+						</menupopup>
+					</menulist>
+					
+					<spacer flex="1"/>
+				</hbox>
+				<hbox><checkbox label="&txt.display.is_show_icons.title;"   id="fvdsd_is_show_icons"  preference="fvdsd_show_icons"     /><spacer flex="1" /></hbox>			
+			</vbox>
+					
+		</groupbox>
+			
+	</prefpane>
+	<prefpane id="fvdsd_service" label="&txt.prefpane.service.title;">
+		<hbox>	
+			<groupbox width="370">
+				<caption label="&txt.prefpane.service.title;:"   />
+				<hbox><checkbox label="Google Advisory"    id="fvdsd_google"  preference="fvdsd_service_google"  oncommand="fvds.service_click(event)" /><spacer flex="1" /></hbox>
+				<hbox><checkbox label="McAfee"    id="fvdsd_mcafee"  preference="fvdsd_service_mcafee"  oncommand="fvds.service_click(event)" /><spacer flex="1" /></hbox>
+				<hbox><checkbox label="Norton"    id="fvdsd_norton"  preference="fvdsd_service_norton"  oncommand="fvds.service_click(event)" /><spacer flex="1" /></hbox>
+				<hbox><checkbox label="WOT"       id="fvdsd_wot"     preference="fvdsd_service_wot"     oncommand="fvds.service_click(event)" /><spacer flex="1" /></hbox>			
+				<hbox><checkbox label="Trustwave SecureBrowsing"       id="fvdsd_trust"     preference="fvdsd_service_trust"     oncommand="fvds.service_click(event)" /><spacer flex="1" /></hbox>			
+				<hbox><checkbox label="DrWeb"       id="fvdsd_drweb"     preference="fvdsd_service_drweb"     oncommand="fvds.service_click(event)" /><spacer flex="1" /></hbox>			
+			</groupbox>
+		</hbox>		
+		<grid flex="1">
+			<columns>
+			<column />
+			<column />
+			<column flex="1" />
+			</columns>
+		</grid>
+		<spacer flex="1" />
+	</prefpane>
+	
+	<prefpane id="fvdsd_goodsite" label="&txt.prefpane.goodsite.title;">
+		<hbox>	
+			<description class="feature-descr">&txt.prefpane.description.goodsite.title;</description>
+			<spacer flex="1"/>
+		</hbox>		
+		<hbox>
+			<listbox id="GoodSiteList" rows="12" width="370" align="left"  onselect="fvds.goodsite_select( event );">
+				<listhead>
+					<listheader label="domain" width="200"/>
+					<listheader label="sub-domain" width="170"/>
+				</listhead>			
+				<listcols>
+					<listcol/>
+					<listcol flex="1"/>
+				</listcols>
+			</listbox>			
+			<spacer flex="1" />
+		</hbox>		
+		<spacer height="5px"/>
+		<hbox>
+			<button id="fvdsd_goodsite_add" label="&txt.prefpane.description.goodsite_add.title;" oncommand="fvds.goodsite_add(event)" />
+		    <button id="fvdsd_goodsite_remove" label="&txt.prefpane.description.goodsite_remove.title;" oncommand="fvds.goodsite_remove(event)" />
+		</hbox>
+		<spacer height="5px"/>
+			<vbox>
+				<grid>
+					<columns>
+						<column width="50px"/>
+						<column width="250px"/>
+						<column width="50px"/>
+						<column flex="1"/>
+					</columns>
+					<rows>
+						<row>
+							<label value="domain" />
+							<textbox id="fvdsd_goodsite_add_text" flex="1" size="35"></textbox>
+							<button id="fvdsd_goodsite_edit" label="&txt.prefpane.description.goodsite_edit.title;" oncommand="fvds.goodsite_edit(event)" disabled="true"/>
+						</row>
+						<row>
+							<label value="" />
+							<checkbox label="&txt.prefpane.description.goodsite_sub.title;"    id="fvdsd_goodsite_sub"  /><spacer flex="1" />
+						</row>
+					</rows>
+				</grid>
+			</vbox>
+		
+	</prefpane>
+	
+	<prefpane id="fvdsd_about" label="&txt.prefpane.about.title;">
+		<hbox><label id="fvdsd_about_title" value="Safe Preview" /><spacer flex="1" /></hbox>
+		<grid flex="1">
+		<columns>
+			<column />
+			<column />
+			<column flex="1" />
+		</columns>
+		<rows>
+			<row>
+				<label id="fvdsd_version_title" value="&txt.prefpane.about.version.title;" />
+				<label id="fvdsd_version_value" />
+				<spacer flex="1" />
+			</row>
+			<row>
+				<label value="&txt.prefpane.about.home_site_visit.title;" />
+				<label class="text-link" value="everhelper.me" id="home_site_visit" />
+				<spacer flex="1" />
+			</row>
+			<row>
+				<label value="&txt.prefpane.about.contact_us.title;" />
+				<label class="text-link" value="fvdmedia@gmail.com" href="mailto:fvdmedia@gmail.com" />
+				<spacer flex="1" />
+			</row>
+		</rows>
+		</grid>
+		<spacer flex="1" />
+	</prefpane>
+</prefwindow>

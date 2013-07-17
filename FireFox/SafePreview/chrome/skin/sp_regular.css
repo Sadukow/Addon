@@ -1,0 +1,204 @@
+#tabbrowser {
+  -moz-binding: url("chrome://global/content/bindings/tabbrowser.xml#tabbrowser");
+}
+
+browser#sidebar
+{
+  max-width:none !important;
+}
+
+
+.noOverflow
+{
+  overflow:none;
+}
+
+
+.cooliris-preview-toolbar toolbarbutton .toolbarbutton-icon {
+
+  -moz-box-pack:center;
+  -moz-box-sizing: padding-box;
+}
+
+.cooliris_contextSiteTree treechildren::-moz-tree-checkbox
+{
+  /* unchecked checkbox treecells */
+  list-style-image: none;
+}
+.cooliris_contextSiteTree treechildren::-moz-tree-checkbox(checked)
+{
+  /* checked checkbox treecells*/
+  list-style-image: url("chrome://cooliris/skin/new/cbox-check.gif");
+}
+.cooliris_contextSiteTree treechildren::-moz-tree-checkbox(disabled)
+{
+  /* disabled checkbox treecells */
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");
+}
+
+
+
+
+
+.safepreview-browser
+{
+  margin-top: 1px;
+  margin-left:  3px;
+  margin-right: 3px;
+  z-index:10000;
+  position:relative;
+  opacity:1.0;
+  background-color:White;
+}
+
+.safepreview-toolbar
+{
+  width:100%;
+  height:30px;
+  z-index:1000;
+}
+
+.safepreview-preview-toolbar toolbarbutton .toolbarbutton-icon {
+
+  -moz-box-pack:center;
+  -moz-box-sizing: padding-box;
+}
+
+.safepreview-statusbar
+{
+	width:100%;
+	height:13px;
+	z-index:1000;
+	margin-bottom: -4px;
+	margin-left:  -1px;
+	margin-right: -1px;
+}
+
+
+/******************************************* Toolbar Black*********************************************************/
+.safepreview-preview-toolbar
+{
+	background-color: #fafafa;  
+}
+
+#safepreview_close
+{
+	list-style-image: url(chrome://sp.single/skin/toolbar/close-btn.png);
+	cursor:pointer;
+}
+
+.safepreview_open_page
+{
+	-moz-appearance:none !important;
+	padding:3px;
+	padding-top:4px;
+	margin-right: 5px;
+	color:#454545;
+	cursor:pointer;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.safepreview_open_page:hover
+{
+	-moz-appearance:none !important;
+	padding:3px;
+	padding-top:4px;
+	margin-right: 5px;
+	color:#676767;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.safepreview_setting
+{
+  list-style-image: url(chrome://sp.single/skin/toolbar/preferences-btn.png);
+  cursor:pointer;
+}
+
+.safepreview_setting[clicked=true]
+{
+  list-style-image: url(chrome://sp.single/skin/toolbar/preferences-btn-click.png);
+  cursor:pointer;
+}
+
+.safepreview-preview-title
+{
+	background-color: #ececec;  
+	overflow: hidden;
+}
+
+.safepreview_page_title
+{
+	-moz-appearance:none !important;
+	padding:3px;
+	padding-top:4px;
+	margin-left: 25px;
+	font-family: Arial,Helvetica,SunSans-Regular,Sans-Serif; 
+	font-size: 11pt;  
+	color:#12c; 	
+	text-decoration:none;
+}
+
+.safepreview_page_url
+{
+	-moz-appearance:none !important;
+	padding:3px;
+	padding-top:4px;
+	margin-left: 25px;
+	font-family: Arial,Helvetica,SunSans-Regular,Sans-Serif; 
+	font-size: 10pt;  
+	color:#093; 	
+	text-decoration:none;
+}
+.safepreview_page_url:hover
+{
+	-moz-appearance:none !important;
+	padding:3px;
+	padding-top:4px;
+	margin-left: 25px;
+	font-family: Arial,Helvetica,SunSans-Regular,Sans-Serif; 
+	font-size: 10pt;  
+	color:#093; 	
+	text-decoration:underline;
+}
+
+.safepreview-statusbar
+{
+  height:13px;
+  text-align:right;
+  background: url(chrome://sp.single/skin/toolbar/lower_fill.png) repeat-x;
+}
+
+.safepreview_resize_left
+{
+  cursor : sw-resize;
+  left:0px;
+  height:15px;
+  border:0px solid red;
+  list-style-image:url(chrome://sp.single/skin/toolbar/resizeicon_left.png);
+}
+
+.safepreview_resize_right
+{
+  cursor : se-resize;
+  right:0px;
+  height:15px;
+  border:0px solid red;
+  list-style-image:url(chrome://sp.single/skin/toolbar/resizeicon_right.png);
+}
+
+#safepreview-mode-live
+{
+  width:100px;
+}
+
+.safepreview-loading-img
+{
+	list-style-image: url(chrome://sp.single/skin/toolbar/loading.gif);
+	h1eight: 130px;	
+	wi1dth: 234px;	
+}
+
+
+

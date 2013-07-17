@@ -1,0 +1,61 @@
+1)
+
+../preference/fvd_single_setup.js
+
+> pref("fvd_single.enable_superfish", true);
+
+
+2)
+
+../modules
+
+config.js
+superfish.js
+
+
+3)
+
+../fvd_settings.js
+
+
+Components.utils.import("resource://fvd.single.modules/config.js");
+
+
+this.init
+		if( !fvd_single_Config.superfish )
+		{
+			document.getElementById( "container_fvdsd_enable_superfish" ).setAttribute("hidden", true);
+		}
+
+
+4)
+../fvd_settings.xul
+
+				<preference id="fvdsd_enable_superfish" name="fvd_single.enable_superfish" type="bool"/>
+
+
+			<hbox id="container_fvdsd_enable_superfish"><checkbox label="&txt.display_superfish.title;" preference="fvdsd_enable_superfish" /><spacer flex="1" /></hbox>	
+
+
+5)
+../fvd_single.js
+
+Components.utils.import("resource://fvd.single.modules/superfish.js");
+
+стр.1252
+	this.give_us_rating = function(event)
+	{	
+		//this.navigate_url( "https://addons.mozilla.org/en-US/firefox/addon/flash-video-downloader-youtube/reviews/" );
+		this.navigate_url( "http://flashvideodownloader.org/fvd-suite/to/s/rate_ff_cn" );
+	}
+	
+
+6)
+../fvd_download.js
+
+стр.1336
+		this.likePostReview = function(){
+			this.navigate_url( "http://flashvideodownloader.org/fvd-suite/to/s/rate_ff_cn" );
+			window.close();
+		}
+

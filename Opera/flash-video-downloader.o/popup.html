@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<title>Flash Video Downloader</title>
+	<link rel="stylesheet" href="css/popup.css">
+	<script src="js/common.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+
+	<div id="operaDownloadHint" class="topHint">
+		<a href="https://addons.opera.com/en/extensions/details/fvd-video-downloader/?display=en" target="_blank" class="text">Opera 15 Video Downlader is here!</a>
+	</div>
+	<div class="bgLine"></div>
+
+	<div id="menu">
+
+	
+		<div class="clear"></div>
+	
+		<span id="menu_search_video"><label for="menu_search_video_input">Search Video: </label><input type="text" id="menu_search_video_input" value="Enter your search here..." style="color:#999" /> <input type="button" value="&rarr;" id="menu_search_video_submit" /></span>
+		<a href="http://www.flashvideodownloader.org/helpfirefox.php" id="menu_help">Help</a>
+		<a href="http://www.flashvideodownloader.org/fvd-suite/" id="menu_converter">Video Converter</a>
+		<a href="http://www.flashvideodownloader.org/fvd-suite/contact/index.php" id="menu_feedback">Feedback</a>
+
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="videos">
+
+		<div id="no_video">Sorry. There are no downloadable videos in this page.</div>
+
+		<div id="no_video_in_root">Sorry. Download feature is not accessible from site root.</div>
+
+		<div id="download_searching">Searching media for download...</div>
+
+		<div id="download_video">This page contain video-file.<br />Press &laquo;Download&raquo; button to download it.<br />
+			<input type="image" value="" id="download_button" />
+		</div>
+
+		<div id="download_choose_video">
+			<h4>Choose video-file:</h4>
+
+			<div id="download_item_container"></div>
+		
+			<div class="download_item" id="download_item_template">
+				<input type="image" value="" class="download_button" />
+				<input type="image" value="copy" class="copylink_button" />
+				
+				<div class="download_quality">
+					<div id="media_quality"></div>
+					<div id="media_format"></div>
+				</div>
+				<div class="download_url"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

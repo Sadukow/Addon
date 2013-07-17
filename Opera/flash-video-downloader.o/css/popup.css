@@ -1,0 +1,300 @@
+/*** Menu-Main ***/
+body {
+	font-family: Arial,Helvetica,SunSans-Regular,Sans-Serif;
+	font-size: 12px;
+	margin: 10px 0;
+}
+
+a#menu_help, a#menu_converter, a#menu_feedback {
+
+	padding-left:30px !important;
+	float:left;
+
+}
+
+a#menu_help {
+
+	background:url('../images/fvd.single.bottom_help.png') no-repeat 4px center;
+	width: 3.5em;
+
+}
+
+a#menu_converter {
+
+	background:url('../images/fvd.single.bottom_converter.png') no-repeat 4px center;
+	width: 8.5em;
+
+}
+
+a#menu_feedback {
+
+	background:url('../images/fvd.single.bottom_feedback.png') no-repeat 4px center;
+	width: 6em;
+
+}
+
+span#menu_search_video {
+
+	margin:4px 0px;
+
+}
+
+div#menu a, div#menu span {
+
+	display:block;
+	color:black;
+	text-decoration:none;
+	padding:5px;
+	height:20px;
+	line-height:22px;
+}
+
+a:hover, a#menu_help:hover, a#menu_converter:hover, a#menu_feedback:hover {
+
+	background-color:#ccccff;
+	border-radius:4px;
+
+}
+
+div#videos {
+
+	border-top:1px solid #ccc;
+	margin-top:4px;
+}
+
+div#no_video, div#no_video_in_root, div#download_searching {
+
+	line-height: 5em;
+	text-align:center;
+
+}
+
+div#download_video, div#download_choose_video {
+
+	text-align:center;
+	display:none;
+
+}
+
+#download_button, .download_button {
+
+	width: 75px;
+	height: 22px;
+	border: 0;
+	cursor: pointer;
+	background-image: url("/images/fvd.single.button.download.png");
+	background-position: 0 0%;
+}
+
+#copylink_button, .copylink_button {
+
+	width: 16px;
+	height: 16px;
+	border: 0;
+	cursor: pointer;
+	background-image: url("/images/fvd.single.button.copylink.png");
+	background-repeat: no-repeat;
+	background-position: 0 0%;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+.download_button {
+
+	margin-top:6px;
+}
+.copylink_button {
+
+	margin-top:6px;
+}
+
+#download_button:hover {
+
+	background-position: 0 50%;
+
+}
+
+#download_button:active {
+
+	background-position: 0 100%;
+
+}
+#copylink_button:hover {
+
+	background-position: 0 50%;
+
+}
+
+#copylink_button:active {
+
+	background-position: 0 100%;
+
+}
+
+.clear {
+
+	clear:both;
+
+}
+
+div#search_block {
+
+	width: 94%;
+	position: absolute;
+
+}
+
+.fd {
+
+	position: absolute;
+	z-index:1000;
+	top:75px;
+	left:0px;
+	border:1px solid WindowFrame;
+	background-color:Window;
+	padding-bottom:1px;
+	overflow: hidden;
+
+}
+
+.gffg {
+
+	float: left;
+	clear: both;
+	font-size: 13px;
+	font-family: arial;
+	width: 100%;
+	cursor: default;
+	padding-top: 1px;
+	padding-left: 2px;
+	color: WindowText;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-moz-user-select : none;
+
+}
+
+.gffg.selected {
+
+	background-color: Highlight;
+	color: HighlightText;
+
+}
+
+div.download_item {
+
+	clear: both;
+	height: auto;
+	padding: 0 4px 0 0;
+	overflow: hidden;
+	cursor: default;
+	height:34px;
+}
+
+div.download_item:hover {
+
+	background-color:#ccccff;
+	border-radius:4px;
+
+}
+
+div.download_item input {
+
+	display: block;
+	float: right;
+
+}
+
+div.download_item div.download_quality {
+
+	width: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	float: left;
+	font-family: arial, sans-serif;
+	font-size: 9px;
+	text-align: center;
+	padding:0em;
+
+}
+
+div.download_item div#media_format, div.download_item div#media_quality {
+
+	margin:0em;
+	padding:0em;
+	line-height: 16px;
+
+}
+
+div.download_item[quality="Low"] div#media_quality {
+
+	color: #C80000;
+
+}
+
+div.download_item[quality="HD"] div#media_quality, div.download_item[quality="Full HD"] div#media_quality {
+
+	color: #008000;
+
+}
+
+div.download_item[quality="High"] div#media_quality, div.download_item[quality="SD"] div#media_quality {
+
+	color: #C88030;
+
+}
+
+
+div.download_item div.download_quality[empty="true"] {
+
+	display: none !important;
+
+}
+
+div.download_item div.download_url {
+
+	max-width: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 34px;
+	text-align: left;
+
+}
+
+
+div#download_item_template {
+
+	display: none;
+
+}
+
+.topHint {
+	border: 2px solid transparent;
+	position: relative;
+	font-size: 11px;
+	display: block;
+	margin-top: -10px;
+	text-align:center;
+	height: 24px;
+}
+
+#operaDownloadHint .text {
+	background: url(/images/fvd.main_opera.png) 6px center no-repeat;
+	font-size: 13px;
+	padding-right: 0px;
+	margin-left: 0px;
+	padding-left: 34px;
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	font-weight:bold;
+}
+
+.bgLine {
+	height: 8px;
+	width: 430px;
+	background: url(/images/fvd.single.bg.png );
+}
+

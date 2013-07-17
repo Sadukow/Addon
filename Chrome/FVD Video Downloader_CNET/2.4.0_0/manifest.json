@@ -1,0 +1,43 @@
+{
+	"manifest_version": 2,   
+
+	"browser_action":
+	{
+		"default_icon": "images/fvd.single.icon.png",
+		"default_title": "__MSG_extension_hint__",
+		"default_popup": "popup.html"
+	},
+
+	"content_scripts": [
+	{
+		"js": [ "js/hooks/vk/script.js" ],
+		"css": [ "js/hooks/vk/style.css" ],
+		"matches": [ "http://vkontakte.ru/*", "http://*.vkontakte.ru/*", "http://vk.com/*", "http://*.vk.com/*" ]
+	}
+	
+
+	],
+
+	"background": {
+		"page": "background.html"		
+	},
+
+	"icons":
+	{
+		"128": "images/fvd.single.main_128.png",
+		"64": "images/fvd.single.main_64.png",
+		"48": "images/fvd.single.main_48.png",
+		"32": "images/fvd.single.main_32.png",
+		"24": "images/fvd.single.main_24.png",
+		"16": "images/fvd.single.main_16.png"
+	},
+
+	"name": "Flash Video Downloader",
+	"description": "Flash Video Downloader helps you to download any video (flv, mp4) from YouTube-like, Facebook, Dailymotion, Break, Metacafe and other video sharing websites in one click. You can download mp3, mp4 (iPod), avi and more. Downloads Flash games.",
+	"options_page": "options.html",
+
+	"default_locale" : "en",
+	"permissions": [ "tabs", "webRequest", "http://*/*", "https://*/*", "cookies" ],
+	"version": "2.2.5",
+	"update_url": "http://www.flashvideodownloader.org/extensions/chrome/updates.xml"
+}

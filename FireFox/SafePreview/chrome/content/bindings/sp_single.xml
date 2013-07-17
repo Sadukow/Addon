@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl"
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:xbl="http://www.mozilla.org/xbl"
+  xmlns:html = "http://www.w3.org/1999/xhtml">
+
+  <binding id="spFrame">
+    <resources>
+      <stylesheet src="chrome://sp.single/skin/sp_regular.css"/>
+    </resources>
+    <content>
+      <xul:stack>
+        <xul:browser position="1" style="background-color: transparent;" disablehistory="true"/>
+          <xul:vbox anonid="safepreview-border-frame" flex="1" xbl:inherits="class=skin" style="margin:1px;">
+          <xul:vbox anonid="safepreview-toolbar" flex="1" class="safepreview-toolbar"
+											onmousedown="document.getBindingParent(this).startFrameDrag(event);">
+            <xul:hbox anonid="safepreview-preview-toolbar" xbl:inherits="skin" class="safepreview-preview-toolbar"  >
+
+			  <xul:spacer width="5px"/>
+              <xul:image  id="safepreview_close" class="safepreview_close" tooltiptext="Close the preview" onclick="sp_single.spLive.hidePreview(true);"/>
+			  <xul:spacer width="25px"/>
+              <xul:label id="safepreview_open_current"    class="safepreview_open_page" value="Current Page"   style="cursor:pointer"    onclick="sp_single.spLive.openLink(event, 0);"/>
+			  <xul:spacer width="25px"/>
+              <xul:label id="safepreview_open_new" 		  class="safepreview_open_page" value="New Page"       style="cursor:pointer"    onclick="sp_single.spLive.openLink(event, 1);"/>
+			  <xul:spacer width="25px"/>
+              <xul:label id="safepreview_open_background" class="safepreview_open_page" value="Background"     style="cursor:pointer"    onclick="sp_single.spLive.openLink(event, 2);"/>
+			  
+              <xul:spacer flex="1"/>
+
+			  <xul:menulist anonid="safepreview-mode-live" oncommand="sp_single.spLive.modeChanged()">
+					<xul:menupopup>
+						<xul:menuitem label="small"  value="small"/>
+						<xul:menuitem label="medium" value="medium"/>
+						<xul:menuitem label="big"    value="big"/>
+					</xul:menupopup>
+			  </xul:menulist>
+			  <xul:spacer width="25px"/>
+			  
+              <xul:image  id="safepreview_setting" class="safepreview_setting" tooltiptext="Setting" onclick="sp_single.display_settings( event );"/>
+              <xul:spacer width="3px"/>
+            </xul:hbox>
+			
+            <xul:hbox anonid="safepreview-preview-title" xbl:inherits="skin" class="safepreview-preview-title"  >
+              <xul:label anonid="safepreview_page_title" class="safepreview_page_title" value="title"  hidden="true"  />
+            </xul:hbox>
+            <xul:hbox anonid="safepreview-preview-url" xbl:inherits="skin" class="safepreview-preview-title"  >
+              <xul:label anonid="safepreview_page_url"   class="safepreview_page_url"   value="url"    hidden="true"   style="cursor:pointer"    onclick="sp_single.spLive.openLink(event, 1);"/>
+            </xul:hbox>
+			
+          </xul:vbox>
+
+          <xul:hbox anonid="browser-box" flex="1">
+            <xul:vbox flex="1">
+				<xul:hbox anonid="safepreview_loading" xbl:inherits="skin" class="safepreview-loading"  >
+					<xul:spacer flex="1"/>
+					<xul:image  id="safepreview_loading_img" class="safepreview-loading-img" tooltiptext="Loading" />
+					<xul:spacer flex="1"/>
+				</xul:hbox>
+				
+				<xul:browser class="safepreview-browser" anonid="safepreview-preview-frame" disablehistory="false" type="content" context="contentAreaContextMenu"/>
+            </xul:vbox>
+          </xul:hbox>
+
+          <xul:hbox  class="safepreview-statusbar" anonid="safepreview_statusbar" flex="1">
+            <xul:image id="safepreview-preview-resize-left"   class="safepreview_resize_left"    onmousedown="sp_single.spLive.startResizeLeft(event);event.preventDefault();event.stopPropagation();"/>
+            <xul:spacer flex="1"/>
+            <xul:image id="safepreview-preview-resize-right"  class="safepreview_resize_right"   onmousedown="sp_single.spLive.startResizeRight(event);event.preventDefault();event.stopPropagation();"/>
+          </xul:hbox>
+		  
+		  
+        </xul:vbox>
+      </xul:stack>
+    </content>
+
+    <implementation>
+	  	
+      <method name="_get">
+        <parameter name="elName"/>
+        <body>
+          return document.getAnonymousElementByAttribute(this, "anonid", elName);
+        </body>
+      </method>
+	  
+      <method name="getPreviewFrame">
+        <body>
+          return this._get("safepreview-preview-frame");
+        </body>
+      </method>
+
+      <method name="setPosition">
+        <parameter name="elName"/>
+        <parameter name="left"/>
+        <parameter name="top"/>
+        <parameter name="width"/>
+        <parameter name="height"/>
+        <body>
+          obj = document.getAnonymousElementByAttribute(this, "anonid", elName);
+          if (left)           obj.style.left = left + "px";
+          if (top)            obj.style.top = top + "px";
+          if (width)          obj.style.width = width + "px";
+          if (height)         obj.style.height = height + "px";
+        </body>
+      </method>
+      <field name="leftAdFrameSize">0</field>
+      <field name="rightAdFrameSize">0</field>
+      <field name="topAdFrameSize">0</field>
+      <field name="bottomAdFrameSize">0</field>
+
+      <field name="previewLeft"></field>
+      <field name="previewTop"></field>
+      <field name="previewWidth"></field>
+      <field name="previewHeight"></field>
+      <field name="isShowing"></field>
+	  
+      <method name="showPopup">
+        <parameter name="left"/>
+        <parameter name="top"/>
+        <parameter name="width"/>
+        <parameter name="height"/>
+        <parameter name="showAd"/>
+        <body>
+        <![CDATA[
+
+          this.hidden = false;
+          this.style.display = "block";
+
+          this.style.left = left + "px";
+          this.style.top = top + "px";
+          this.style.width = width + "px";
+          this.style.height = "auto";
+
+          this.previewLeft = left;
+          this.previewTop = top;
+          this.previewWidth = width;
+          this.previewHeight = height;
+
+          var browserWidth = width;
+          var actualBrowserWidth = width;
+          var actualBrowserHeight = this._showSearchBar ? height - 70 : height - 43;
+          var browserHeight = height;
+
+          var adFrameHeight, adFrameWidth;
+          this.isShowing = true;
+          this.setPosition("safepreview-preview-frame", null, null, browserWidth, browserHeight, true);
+
+        ]]>
+        </body>
+      </method>
+	  
+      <method name="hidePopup">
+        <body>
+          this._adVisible = false;
+          var appInfo = Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULAppInfo);
+          var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"].getService(Components.interfaces.nsIVersionComparator);
+          
+		  if (versionChecker.compare(appInfo.version, "3.0") >= 0)     this.getPreviewFrame().loadURI("about:blank");
+          else            this.getPreviewFrame().setAttribute("src", "about:blank");
+          this.isShowing = false;
+          this.hidden = true;
+
+          this.style.display = "none";
+        </body>
+      </method>
+	  
+      <method name="showURL">
+        <parameter name="url"/>
+        <body>
+			var x = this._get("safepreview_page_url");
+			if (url.length>120) x.value = url.substring(0,120)+'...';
+			       else x.value = url;
+            x.hidden = false;
+        </body>
+      </method>
+	  
+      <method name="showTITLE">
+        <parameter name="title"/>
+        <body>
+			var x = this._get("safepreview_page_title");
+			if (title.length>90) x.value = title.substring(0,90)+'...';
+			       else x.value = title;
+            x.hidden = false;
+        </body>
+      </method>
+	  
+      <method name="hideURL">
+        <body>
+			var x = this._get("safepreview_page_url");
+			x.value = "";
+            x.hidden = true;
+        </body>
+      </method>
+	  
+      <method name="hideTITLE">
+        <body>
+			var x = this._get("safepreview_page_title");
+			x.value = "";
+            x.hidden = true;
+        </body>
+      </method>
+
+      <method name="showLoading">
+        <body>
+			var x = this._get("safepreview_loading");
+            x.hidden = false;
+        </body>
+      </method>
+      <method name="hideLoading">
+        <body>
+			var x = this._get("safepreview_loading");
+            x.hidden = true;
+        </body>
+      </method>
+	  
+      <method name="setModeLive">
+        <parameter name="mode"/>
+        <body>
+			this._get("safepreview-mode-live").value = mode;
+        </body>
+      </method>
+	  
+      <method name="getModeLive">
+        <body>
+          return this._get("safepreview-mode-live").value;
+        </body>
+      </method>
+	  
+      <method name="sizePopup">
+        <parameter name="left"/>
+        <parameter name="top"/>
+        <parameter name="width"/>
+        <parameter name="height"/>
+        <parameter name="showAd"/>
+        <body>
+        <![CDATA[
+
+          this.style.left = left + "px";
+          this.style.top = top + "px";
+          this.style.width = width + "px";
+          this.style.height = "auto";
+
+          this.previewLeft = left;
+          this.previewTop = top;
+          this.previewWidth = width;
+          this.previewHeight = height;
+
+          var browserWidth = width;
+          var actualBrowserWidth = width;
+          var actualBrowserHeight = this._showSearchBar ? height - 70 : height - 43;
+          var browserHeight = height;
+
+          this.setPosition("safepreview-preview-frame", null, null, browserWidth, browserHeight, true);
+        ]]>
+        </body>
+      </method>
+
+      <field name="dragActive"/>
+      <field name="moveFrameFunc"/>
+      <field name="stopFrameFunc"/>
+	  
+      <method name="startFrameDrag">
+        <parameter name="evt"/>
+        <body>
+          if (this.dragActive)        return;
+          sp_single.spLive.current_MouseLocX = evt.screenX;
+          sp_single.spLive.current_MouseLocY = evt.screenY;
+		  
+          this._get("safepreview-toolbar").style.cursor = "-moz-grabbing";
+          this._get("safepreview_statusbar").style.cursor = "-moz-grabbing";
+          var self = this;
+		  
+          this.moveFrameFunc = function(evt){ self.moveFrame(evt); };
+          this.stopFrameFunc = function(evt){ self.stopFrameDrag(evt); };
+
+          window.addEventListener("mouseup", this.stopFrameFunc, true);
+          window.addEventListener("mousemove", this.moveFrameFunc, true);
+
+          this.dragActive = true;
+        </body>
+      </method>
+	  
+      <method name="stopFrameDrag">
+        <parameter name="evt"/>
+        <body>
+          if (!this.dragActive)       return;
+
+          window.removeEventListener("mouseup", this.stopFrameFunc, true);
+          window.removeEventListener("mousemove", this.moveFrameFunc, true);
+
+          sp_single.spLive.changeDimensions( sp_single.spLive.dimPreview_left, 
+											 sp_single.spLive.dimPreview_top,
+											 sp_single.spLive.dimPreview_width, 
+											 sp_single.spLive.dimPreview_height, true);
+			  
+          this._get("safepreview-toolbar").style.cursor = "";
+          this._get("safepreview_statusbar").style.cursor = "";
+		  
+//          cpvw_Prefs.setPreviewLoc(cpvw_previewHandler.dimPreview_left, cpvw_previewHandler_dimPreview.top);
+          this.dragActive = false;
+        </body>
+      </method>
+	  
+      <method name="moveFrame">
+        <parameter name="evt"/>
+        <body>
+          if (!this.dragActive)  return;
+          sp_single.spLive.dimPreview_left += evt.screenX - sp_single.spLive.current_MouseLocX;
+          sp_single.spLive.dimPreview_top  += evt.screenY - sp_single.spLive.current_MouseLocY;
+
+          sp_single.spLive.current_MouseLocX = evt.screenX;
+          sp_single.spLive.current_MouseLocY = evt.screenY;
+
+          sp_single.spLive.changeDimensions( sp_single.spLive.dimPreview_left, 
+											 sp_single.spLive.dimPreview_top,
+											 sp_single.spLive.dimPreview_width, 
+											 sp_single.spLive.dimPreview_height, true);
+			  
+        </body>
+      </method>
+	  
+	  
+	  
+    </implementation>
+    <handlers>
+    </handlers>
+  </binding>
+</bindings>

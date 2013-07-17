@@ -1,0 +1,14 @@
+overlay	chrome://browser/content/browser.xul	chrome://sp.single/content/sp_single.xul 
+
+content	sp.single	chrome/content/
+skin	sp.single	classic/1.0	chrome/skin/
+
+resource sp.single.modules 	modules/
+
+
+locale	sp.single	en-US	chrome/locale/en-US/
+locale	sp.single	ru	chrome/locale/ru/
+
+style	chrome://global/content/customizeToolbar.xul	chrome://sp.single/skin/sp.single.css
+
+

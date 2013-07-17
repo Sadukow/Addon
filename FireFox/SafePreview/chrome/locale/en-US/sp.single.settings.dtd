@@ -1,0 +1,54 @@
+<!ENTITY txt.dialog.title		"Settings">
+
+<!ENTITY txt.dialog.button_ok.title	"OK">
+<!ENTITY txt.dialog.button_cancel.title	"Cancel">
+
+<!ENTITY txt.prefpane.about.title	"About Preview">
+<!ENTITY txt.prefpane.about.version.title		"Version:">
+<!ENTITY txt.prefpane.about.home_site_visit.title	"Visit: ">
+<!ENTITY txt.prefpane.about.contact_us.title	"Contact us: ">
+
+<!ENTITY txt.prefpane.general.title	"General">
+
+<!ENTITY txt.group.interface.title		"Display settings:">
+<!ENTITY txt.display.position_icon.title		"Icon appears away:">
+<!ENTITY txt.display.icon_x.title		"Horizontal shift:">
+<!ENTITY txt.display.icon_y.title		"Vertical shift:">
+<!ENTITY pixels.label					"px">
+<!ENTITY sek.label						"sec">
+<!ENTITY day.label						"day">
+
+<!ENTITY txt.display.icon.label		"Display icons: ">
+<!ENTITY txt.display.icon.after.title	"after">
+<!ENTITY txt.display.icon.near.title	"near">
+
+<!ENTITY txt.display.speed_icon.title		"Time Delay:">
+
+<!ENTITY txt.display.show_icon.title		"Show icon speed:">
+<!ENTITY txt.display.hide_icon.title		"Hide icon speed:">
+<!ENTITY txt.display.close_window.title		"Close Window speed:">
+
+<!ENTITY txt.display.query.title				"Trusted Services Cache:">
+<!ENTITY txt.display.daily_history.title		"Keep cache requests:">
+<!ENTITY txt.display.daily_history_0.title		"1 day">
+<!ENTITY txt.display.daily_history_1.title		"30 days">
+
+<!ENTITY txt.display.shows.title				"Shows">
+<!ENTITY txt.display.is_safe.title				"Enable 'Is it Safe'">
+<!ENTITY txt.display.is_preview.title			"Enable 'Instant' Preview">
+<!ENTITY txt.display.is_live.title				"Enable 'Live' Preview">
+<!ENTITY txt.display.is_show_icons.title		"Show 'Icons' near cursor">
+
+<!ENTITY txt.prefpane.service.title		"Trusted Services">
+<!ENTITY txt.prefpane.goodsite.title	"Trusted Websites">
+
+<!ENTITY txt.prefpane.description.goodsite.title	"Do not check these websites">
+<!ENTITY txt.prefpane.description.goodsite_remove.title	 "Delete">
+<!ENTITY txt.prefpane.description.goodsite_add.title	 "Add">
+<!ENTITY txt.prefpane.description.goodsite_edit.title	 "Edit">
+<!ENTITY txt.prefpane.description.goodsite_sub.title	 "Include sub-domains">
+
+
+
+<!ENTITY txt.show_hints.title	"Dont Show hints">
+
