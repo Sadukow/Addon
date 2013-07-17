@@ -1,0 +1,4 @@
+Addon
+=====
+
+Extension for Browser
