@@ -1,0 +1,30 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "images/getthemall.icon.png",
+      "default_popup": "popup.html",
+      "default_title": "GetThemAll"
+   },
+   "content_scripts": [ {
+      "css": 	[ "js/hooks/content.css" ],
+      "js": 	[ "js/hooks/content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "GetThemAll",
+   "icons": {
+      "128": "images/getthemall.main_128.png",
+      "16":  "images/getthemall.main_16.png",
+      "24":  "images/getthemall.main_24.png",
+      "32":  "images/getthemall.main_32.png",
+      "48":  "images/getthemall.main_48.png",
+      "64":  "images/getthemall.main_64.png"
+   },
+   "manifest_version": 2,
+   "name": "GetThemAll",
+   "permissions": [ "tabs", "contextMenus", "webRequest", "http://*/*", "https://*/*" ],
+   "version": "1.0.0"
+}
